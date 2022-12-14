@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meme Generator - Beta Version</title>
+    <link rel="icon" type="image/x-icon" href="img/icons/meme-icon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="init()">
+
+    <div class="main-screen"></div>
+
+    <header class="main-header">
+        <section class="header-wrapper">
+
+            <div class="logo">Meme Generator
+                <span> *Beta Version</span>
+            </div>
+
+            <nav id="mainNav" class="main-nav-wrapper">
+
+                <ul class="main-nav-list">
+                    <li><a href="#memes-gallery" class="active">Gallery</a>
+                    <li><a href="#saved-memes">Saved</a>
+                </ul>
+
+                <!-- <div class="toggle-menu-screen screen" onclick="toggleMenu()" alt="toggle main menu">=</div> -->
+
+            </nav>
+
+        </section>
+    </header>
+
+
+    <section class="meme-gallery">
+
+    </section>
+
+
+    <section class="meme-editor">
+
+        <section class="canvas-container">
+
+            <div class="canvas-control">
+                <canvas id="canvas" height="500px" width="500px"></canvas>
+
+                <div class="meme-editor-control">
+
+                    <input type="text" class="set-txt" placeholder="Meme text here">
+
+                </div>
+            </div>
+
+        </section>
+        
+    </section>
+
+
+    <section class="canvas-container">
+
+        <div class="canvas-control">
+            <canvas id="canvas" height="500px" width="500px"></canvas>
+        </div>
+
+
+    <footer class="main-footer">
+
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/meme-controller.js"></script>
+    <script src="js/gallery-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+</body>
+
+</html>
