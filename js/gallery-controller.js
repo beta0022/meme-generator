@@ -1,19 +1,23 @@
 'use strict'
 
 function renderGallery() {
-    var imgs = setImgs()
+    var imgs = getImgs()
 
-    var strHTML = ''
-
-    imgs.forEach(({ url, id }) => {
-      strHTML += `<img src="./${url}" data-id=${id} alt="">`
+    var strHTML = imgs.map(function (img) {
+        return `<img src="${img.url}"  onclick="onImgSelect(${img.id})">`
     })
 
-    document.querySelector('.meme-gallery').innerHTML = strHTML
+    document.querySelector('.meme-gallery').innerHTML = strHTML.join('')
 }
 
 
 function onImgSelect(imgId) {
-    setMemeImgId(imgId)
+    const elEditor = document.querySelector('.meme-editor')
+    elEditor.classList.remove('hide')
+
+    const elGallery = document.querySelector('.meme-gallery')
+    elGallery.style.display = 'none'
+
+    setImg(imgId)
     renderMeme()
 }

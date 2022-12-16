@@ -2,82 +2,98 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meme Generator - Beta Version</title>
-    <link rel="icon" type="image/x-icon" href="img/icons/meme-icon.png">
+  <title>Meme Generator - Beta Version</title>
+  <link rel="icon" type="image/x-icon" href="img/icons/meme-icon.png">
 
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="init()">
 
-    <div class="main-screen"></div>
+<body onload="onInit()">
 
-    <header class="main-header">
-        <section class="header-wrapper">
-
-            <div class="logo">Meme Generator
-                <span> *Beta Version</span>
-            </div>
-
-            <nav id="mainNav" class="main-nav-wrapper">
-
-                <ul class="main-nav-list">
-                    <li><a href="#memes-gallery" class="active">Gallery</a>
-                    <li><a href="#saved-memes">Saved</a>
-                </ul>
-
-                <!-- <div class="toggle-menu-screen screen" onclick="toggleMenu()" alt="toggle main menu">=</div> -->
-
-            </nav>
-
-        </section>
-    </header>
+  <div class="main-screen"></div>
 
 
-    <section class="meme-gallery">
+  <header class="main-header">
 
+    <section class="header-wrapper">
+
+      <div class="logo">Meme Generator
+        <span> *Beta Version</span>
+      </div>
+
+      <nav id="mainNav" class="main-nav-wrapper">
+
+        <ul class="main-nav-list">
+          <li><a class="nav-gallery active">Gallery</a>
+          <!-- <li><a class="nav-saved">Saved</a> -->
+        </ul>
+
+        <!-- <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
+         -->
+      </nav>
     </section>
+  </header>
 
+  
+  <section class="meme-gallery">
 
-    <section class="meme-editor">
+  </section>
 
-        <section class="canvas-container">
+  
+  <section class="meme-editor hide">
 
-            <div class="canvas-control">
-                <canvas id="canvas" height="500px" width="500px"></canvas>
+    <div class="canvas-container">
 
-                <div class="meme-editor-control">
+      <canvas id="canvas" width="500" height="500"></canvas>
+      
+      <div class="meme-editor-control">
 
-                    <input type="text" class="set-txt" placeholder="Meme text here">
+        <input type="text" class="text-line-input" placeholder="Enter text here">
 
-                </div>
-            </div>
+        <div class="meme-editor-btns">
+          <button class="font-color-btn">
+            <input type="color" class="font-color-input" name="fillColor">Pick Font Color
+          </button>
+          
+          <button class="increase-font-btn">+A</button>
+          
+          <button class="decrease-font-btn">-A</button>
 
-        </section>
-        
-    </section>
+          <button class="add-line-btn">Add Line</button>
 
-
-    <section class="canvas-container">
-
-        <div class="canvas-control">
-            <canvas id="canvas" height="500px" width="500px"></canvas>
+          <button class="switch-line-btn">Switch Lines</button>
         </div>
+      </div>
+    </div>
+  </section>
 
 
-    <footer class="main-footer">
+  <section class="saved-meme-gallery">
 
-    </footer>
-    
-    <script src="js/main.js"></script>
-    <script src="js/meme-service.js"></script>
-    <script src="js/meme-controller.js"></script>
-    <script src="js/gallery-service.js"></script>
-    <script src="js/gallery-controller.js"></script>
+  </section>
+
+
+  <footer class="main-footer">
+    <div class="logo">Meme Generator
+      <span> *Beta Version</span>
+    </div>
+    <small> &#169; by 
+      <a href="https://github.com/beta0022" target=”_blank”> Beta</a>
+      2022</small>
+  </footer>
+
+
+  <script src="js/storage.js"></script>
+  <script src="js/gallery-service.js"></script>
+  <script src="js/meme-service.js"></script>
+  <script src="js/gallery-controller.js"></script>
+  <script src="js/meme-controller.js"></script>
+
 </body>
 
 </html>
