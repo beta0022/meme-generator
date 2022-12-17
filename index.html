@@ -30,18 +30,14 @@
 
         <ul class="main-nav-list">
           <li><a class="nav-gallery active">Gallery</a>
-          <!-- <li><a class="nav-saved">Saved</a> -->
         </ul>
 
-        <!-- <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
-         -->
       </nav>
     </section>
   </header>
 
-  
-  <section class="meme-gallery">
 
+  <section class="meme-gallery">
   </section>
 
   
@@ -56,25 +52,81 @@
         <input type="text" class="text-line-input" placeholder="Enter text here">
 
         <div class="meme-editor-btns">
+
           <button class="font-color-btn">
-            <input type="color" class="font-color-input" name="fillColor">Pick Font Color
+            <input type="color" class="font-color-input" name="fillColor">
+            <i class="fa-solid fa-palette"></i>
+          </button>
+
+          <button class="font-stroke-color-btn">
+            <input type="color" class="font-stroke-color-input" name="fillColor">
+            <i class="fa-solid fa-highlighter"></i>
           </button>
           
-          <button class="increase-font-btn">+A</button>
+          <button class="increase-font-btn">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </button>
           
-          <button class="decrease-font-btn">-A</button>
+          <button class="decrease-font-btn">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+          </button>
 
-          <button class="add-line-btn">Add Line</button>
+          <button class="add-line-btn">
+            <i class="fa-solid fa-circle-plus"></i>
+          </button>
 
-          <button class="switch-line-btn">Switch Lines</button>
+          <button class="delete-line-btn">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+
+          <button class="switch-line-btn">
+            <i class="fa-solid fa-shuffle"></i>
+          </button>
+
+          <button class="up-line-btn">
+            <i class="fa-solid fa-arrow-up"></i>
+          </button>
+
+          <button class="down-line-btn">
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
+
+          <button class="aline-left-btn">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+
+          <button class="aline-center-btn">
+            <i class="fa-solid fa-align-justify"></i>
+          </button>
+
+          <button class="aline-right-btn">
+            <i class="fa-solid fa-align-right"></i>
+          </button>
+
+        </div>
+
+        <div class="meme-other-btn">
+
+          <a href="#" onclick="downloadMeme(this)" download="my-meme">
+            <button class="download-btn">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              Download
+            </button>
+          </a>
+
+          <button class="uplouad-fb-btn" onclick="onShareOnFB()">
+            <i class="fa-solid fa-share-nodes"></i> Share on <i class="fa-brands fa-facebook-f"></i>
+          </button>
+
+          <select name="canvas-font" class="font-family-select">
+            <option value="Impact">Impact</option>
+            <option value="Calibri">Calibri</option>
+            <option value="Lato-Regular">Lato</option>
+          </select>
+
         </div>
       </div>
     </div>
-  </section>
-
-
-  <section class="saved-meme-gallery">
-
   </section>
 
 
@@ -87,12 +139,13 @@
       2022</small>
   </footer>
 
-
-  <script src="js/storage.js"></script>
+  
   <script src="js/gallery-service.js"></script>
   <script src="js/meme-service.js"></script>
   <script src="js/gallery-controller.js"></script>
   <script src="js/meme-controller.js"></script>
+  
+  <script src="https://kit.fontawesome.com/b476c0bccd.js" crossorigin="anonymous"></script>
 
 </body>
 

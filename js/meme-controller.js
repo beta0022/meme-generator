@@ -3,7 +3,6 @@
 let gElCanvas
 let gCtx
 
-
 function onInit() {
     gElCanvas = document.querySelector('#canvas')
     gCtx = gElCanvas.getContext('2d')
@@ -44,6 +43,9 @@ function onSetListeners() {
     const elFillColorInput = document.querySelector('.font-color-input')
     elFillColorInput.addEventListener('input', onUpdateFillColor)
 
+    const elFillStrokeColorInput = document.querySelector('.font-stroke-color-input')
+    elFillStrokeColorInput.addEventListener('input', onUpdateStrokeColor)
+
     const elIncreaseFontBtn = document.querySelector('.increase-font-btn')
     elIncreaseFontBtn.addEventListener('click', onIncreaseFontSize)
 
@@ -53,8 +55,37 @@ function onSetListeners() {
     const elAddLine = document.querySelector('.add-line-btn')
     elAddLine.addEventListener('click', onAddLine)
 
+    const elDeleteLine = document.querySelector('.delete-line-btn')
+    elDeleteLine.addEventListener('click', onDeleteText)
+
     const elSwitchLines = document.querySelector('.switch-line-btn')
     elSwitchLines.addEventListener('click', onSwitchLines)
+
+    const elUpLine = document.querySelector('.up-line-btn')
+    elUpLine.addEventListener('click', onMoveUpLine)
+
+    const elDownLine = document.querySelector('.down-line-btn')
+    elDownLine.addEventListener('click', onMoveDownLine)
+
+    const elLeftLine = document.querySelector('.aline-left-btn')
+    elLeftLine.addEventListener('click', () => {
+        onChangeAlign('left')
+    })
+
+    const elCenterLine = document.querySelector('.aline-center-btn')
+    elCenterLine.addEventListener('click', () => {
+        onChangeAlign('center')
+    })
+
+    const elRightLine = document.querySelector('.aline-right-btn')
+    elRightLine.addEventListener('click', () => {
+        onChangeAlign('right')
+    })
+
+    const elFontFamilySelect = document.querySelector('.font-family-select')
+    elFontFamilySelect.addEventListener('change', function () {
+        onChangeFontFamily(this.value)
+    })
 
     const elGalleryNav = document.querySelector('.nav-gallery')
     elGalleryNav.addEventListener('click', onChangeTab)
@@ -74,6 +105,12 @@ function onUpdateFillColor(ev) {
     setFillColor(ev.target.value)
     renderMeme()
 }
+
+
+function onUpdateStrokeColor(ev) {
+    setStrokeColor(ev.target.value)
+    renderMeme()
+}
  
 
 function onIncreaseFontSize(click) {
@@ -88,9 +125,27 @@ function onDecreaseFontSize(click) {
 }
 
 
+function onMoveUpLine(click) {
+    setMoveLine(-2)
+    renderMeme()
+}
+
+
+function onMoveDownLine(click) {
+    setMoveLine(2)
+    renderMeme()
+}
+
+
 function onAddLine(click) {
     addLine()
     clearTxtInput()
+    renderMeme()
+}
+
+
+function onDeleteText(click) {
+    deleteLine()
     renderMeme()
 }
 
@@ -102,9 +157,21 @@ function onSwitchLines(click) {
 }
 
 
+function onChangeAlign(align) {
+    changeAlign(align)
+    renderMeme()
+}
+
+
 function clearTxtInput() {
     const elImputText = document.querySelector('.text-line-input')
     elImputText.value = ''
+}
+
+
+function onChangeFontFamily(font) {
+    setFontFamily(font)
+    renderMeme()
 }
 
 
@@ -121,4 +188,16 @@ function onChangeTab(clickedTab) {
 
         onInit()
     }
+}
+
+
+function onShareOnFB() {
+    const imgDataUrl = gElCanvas.toDataURL()
+
+    function onSuccess(uploadedImgUrl) {
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+    }
+
+    doShareImg(imgDataUrl, onSuccess)
 }
