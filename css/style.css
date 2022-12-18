@@ -1,5 +1,6 @@
 /* FONTS */
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;900&display=swap');
+/* @font-face {
     font-family: Poppins-Regular;
     src: url(/fonts/Poppins/Poppins-Regular.ttf);
 }
@@ -17,7 +18,7 @@
 @font-face {
     font-family: Poppins-Medium;
     src: url(/fonts/Poppins/Poppins-Medium.ttf);
-}
+} */
 
 :root {
     /* COLOR PALLETE */
@@ -291,62 +292,3 @@ small a:hover {
     color: var(--clr3);
     transition: transform 1s ease;
 }
-
-/* MOBILE */
-/* @media (min-width: 100px){
-    .main-screen {
-        max-width: var(--tablet);
-    }
-
-    .header-wrapper {
-        max-width: var(--tablet);
-    }
-
-    .meme-gallery {
-        max-width: var(--tablet);
-    }
-
-    .meme-editor {
-        max-width: var(--tablet);
-    }
-} */
-
-
-/* TABLET */
-/* @media screen and (min-width: var(--tablet)) {
-    .main-screen {
-        max-width: var(--desktop);
-    }
-
-    .header-wrapper {
-        max-width: var(--desktop);
-    }
-
-    .meme-gallery {
-        max-width: var(--desktop);
-    }
-
-    .meme-editor {
-        max-width: var(--desktop);
-    }
-} */
-
-
-/* DESKTOP */
-/* @media screen and (min-width: var(--desktop)) {
-    .main-screen {
-        max-width: var(--max);
-    }
-
-    .header-wrapper {
-        max-width: var(--max);
-    }
-
-    .meme-gallery {
-        max-width: var(--max);
-    }
-
-    .meme-editor {
-        max-width: var(--max);
-    }
-} */

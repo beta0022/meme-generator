@@ -10,6 +10,7 @@
   <link rel="icon" type="image/x-icon" href="img/icons/meme-icon.png">
 
   <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;900&display=swap" rel="stylesheet"> -->
 </head>
 
 
@@ -53,6 +54,12 @@
 
         <div class="meme-editor-btns">
 
+          <select name="canvas-font" class="font-family-select">
+            <option value="Impact">Impact</option>
+            <option value="Calibri">Calibri</option>
+            <option value="Lato-Regular">Lato</option>
+          </select>
+
           <button class="font-color-btn">
             <input type="color" class="font-color-input" name="fillColor">
             <i class="fa-solid fa-palette"></i>
@@ -71,26 +78,6 @@
             <i class="fa-solid fa-magnifying-glass-minus"></i>
           </button>
 
-          <button class="add-line-btn">
-            <i class="fa-solid fa-circle-plus"></i>
-          </button>
-
-          <button class="delete-line-btn">
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
-
-          <button class="switch-line-btn">
-            <i class="fa-solid fa-shuffle"></i>
-          </button>
-
-          <button class="up-line-btn">
-            <i class="fa-solid fa-arrow-up"></i>
-          </button>
-
-          <button class="down-line-btn">
-            <i class="fa-solid fa-arrow-down"></i>
-          </button>
-
           <button class="aline-left-btn">
             <i class="fa-solid fa-align-left"></i>
           </button>
@@ -101,6 +88,26 @@
 
           <button class="aline-right-btn">
             <i class="fa-solid fa-align-right"></i>
+          </button>
+
+          <button class="up-line-btn">
+            <i class="fa-solid fa-arrow-up"></i>
+          </button>
+
+          <button class="down-line-btn">
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
+
+          <button class="add-line-btn">
+            <i class="fa-solid fa-circle-plus"></i>
+          </button>
+
+          <button class="delete-line-btn">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+
+          <button class="switch-line-btn">
+            <i class="fa-solid fa-shuffle"></i>
           </button>
 
         </div>
@@ -114,15 +121,9 @@
             </button>
           </a>
 
-          <button class="uplouad-fb-btn" onclick="onShareOnFB()">
+          <button class="upload-fb-btn" onclick="onShareOnFB()">
             <i class="fa-solid fa-share-nodes"></i> Share on <i class="fa-brands fa-facebook-f"></i>
           </button>
-
-          <select name="canvas-font" class="font-family-select">
-            <option value="Impact">Impact</option>
-            <option value="Calibri">Calibri</option>
-            <option value="Lato-Regular">Lato</option>
-          </select>
 
         </div>
       </div>
@@ -140,10 +141,10 @@
   </footer>
 
   
-  <script src="js/gallery-service.js"></script>
-  <script src="js/meme-service.js"></script>
-  <script src="js/gallery-controller.js"></script>
-  <script src="js/meme-controller.js"></script>
+  <script src="js/gallery.service.js"></script>
+  <script src="js/meme.service.js"></script>
+  <script src="js/gallery.controller.js"></script>
+  <script src="js/meme.controller.js"></script>
   
   <script src="https://kit.fontawesome.com/b476c0bccd.js" crossorigin="anonymous"></script>
 
